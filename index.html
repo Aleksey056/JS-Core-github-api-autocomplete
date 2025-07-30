@@ -1,1 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<main class="main">
+		<div class="field">
+
+			<div class="wrapper">
+				<input type="text" id="search" placeholder="Введите репозиторий который хотите найти" class="search-field">
+				<div id="autocomplete" class="autocomplete"></div>
+			</div>
+
+			<div class="out-field"></div>
+		</div>
+	</main>
+
+	<template id="card">
+		<div class="card" id="out">
+			<div class="card-text">
+				<span class="card-name"></span>
+				<span class="card-owner"></span>
+				<span class="card-stars"></span>
+			</div>
+			<button class="card-button" id="delete-button" type="button"></button>
+		</div>
+	</template>
+
+	<script src="main.js"></script>
+</body>
+
+</html>

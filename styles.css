@@ -1,0 +1,67 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+
+	background-color: azure;
+}
+
+.main {
+	padding: 50px;
+	background-color: #C4C4C4;
+}
+
+.search-input {
+	height: 61px;
+	width: 500px;
+	text-align: center;
+}
+
+.card {
+	box-sizing: border-box;
+	display: flex;
+	padding: 8px 16px;
+	margin-top: 45px;
+	width: 503px;
+	height: 101px;
+	border: 1px solid black;
+	background-color: #E27BEB;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card-text {
+	display: flex;
+}
+
+
+.card-button {
+	background-color: transparent;
+	border: none;
+	width: 42px;
+	height: 42px;
+	padding: 0;
+	position: relative;
+}
+
+.card-button::after,
+.card-button::before {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 4px;
+	background-color: #ff0000;
+}
+
+.card-button::after {
+	transform: rotate(45deg);
+}
+
+.card-button::before {
+	transform: rotate(318deg);
+}
