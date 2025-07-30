@@ -4,29 +4,27 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>GithubApiAutocomplete</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 	<main class="main">
 		<div class="field">
-
 			<div class="wrapper">
-				<input type="text" id="search" placeholder="Введите репозиторий который хотите найти" class="search-field">
-				<div id="autocomplete" class="autocomplete"></div>
+				<input type="text" id="search" class="search-field" placeholder="Введите репозиторий">
+				<div id="addition" class="addition"></div>
 			</div>
-
-			<div class="out-field"></div>
+			<div class="out"></div>
 		</div>
 	</main>
 
 	<template id="card">
-		<div class="card" id="out">
+		<div class="card">
 			<div class="card-text">
-				<span class="card-name"></span>
-				<span class="card-owner"></span>
-				<span class="card-stars"></span>
+				<span class="alternative-name"></span>
+				<span class="alternative-owner"></span>
+				<span class="alternative-stars"></span>
 			</div>
 			<button class="card-button" id="delete-button" type="button"></button>
 		</div>
