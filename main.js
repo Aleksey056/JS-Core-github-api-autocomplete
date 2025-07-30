@@ -32,7 +32,7 @@ const getRepositoriess = async (searchItem) => {
 						addition.innerHTML = '<p class="no-results">Такой репозиторий не найден!</p>'
 					} else {
 						items.forEach(item => {
-							const alternative = document.createElement('p')
+							const alternative = document.createElement('li')
 							alternative.className = 'alternative'
 							alternative.textContent = `${item.name}`
 							alternative.addEventListener('click', () => addCard(item))
@@ -40,9 +40,14 @@ const getRepositoriess = async (searchItem) => {
 						})
 					}
 				})
-			} else {
+			}
+			else {
 				addition.innerHTML = '<p class="no-results">Я за вами не успел, попробуйте снова <br> ввести название репозитория</p>'
 			}
+		})
+		.catch(e => {
+			console.log(e);
+			return e
 		})
 }
 
@@ -56,11 +61,12 @@ const debounce = (fn, delay) => {
 	}
 };
 
-const debounceGetRepositoriess = debounce(getRepositoriess, 500)
+const debounceGetRepositoriess = debounce(getRepositoriess, 1000)
 
 searchField.addEventListener('input', () => {
-	if (searchField.length === 0) {
+	if (searchField.value === null) {
 		return
 	}
 	debounceGetRepositoriess(searchField.value.trim())
 })
+

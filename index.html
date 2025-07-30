@@ -13,21 +13,21 @@
 		<div class="field">
 			<div class="wrapper">
 				<input type="text" id="search" class="search-field" placeholder="Введите репозиторий">
-				<div id="addition" class="addition"></div>
+				<ul id="addition" class="addition"></ul>
 			</div>
-			<div class="out"></div>
+			<ul class="out"></ul>
 		</div>
 	</main>
 
 	<template id="card">
-		<div class="card">
+		<li class="card">
 			<div class="card-text">
 				<span class="alternative-name"></span>
 				<span class="alternative-owner"></span>
 				<span class="alternative-stars"></span>
 			</div>
 			<button class="card-button" id="delete-button" type="button"></button>
-		</div>
+		</li>
 	</template>
 
 	<script src="main.js"></script>
