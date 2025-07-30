@@ -15,7 +15,6 @@ const addCard = (item) => {
 		evt.target.parentNode.remove()
 	})
 	field.append(card)
-
 }
 
 const getRepositoriess = async (searchItem) => {
@@ -60,7 +59,7 @@ const debounce = (fn, delay) => {
 const debounceGetRepositoriess = debounce(getRepositoriess, 500)
 
 searchField.addEventListener('input', () => {
-	if (searchField.value[0] === ' ') {
+	if (searchField.length === 0) {
 		return
 	}
 	debounceGetRepositoriess(searchField.value.trim())
