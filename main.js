@@ -44,12 +44,14 @@ const getRepositoriess = async (searchItem) => {
 			else {
 				addition.innerHTML = '<p class="no-results">Введите название репозитория</p>'
 			}
+
 		})
-		.catch((e) => {
-			console.error(e);
-			return e
+		.catch((error) => {
+			addition.textContent = 'Произошла непредвиденная ошибка, обновите страницу'
+			console.error('Ошибка: ', error)
 		})
 }
+
 
 const debounce = (fn, delay) => {
 	let timer;
