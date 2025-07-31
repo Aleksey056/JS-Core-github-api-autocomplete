@@ -42,11 +42,11 @@ const getRepositoriess = async (searchItem) => {
 				})
 			}
 			else {
-				addition.innerHTML = '<p class="no-results">Я за вами не успел, попробуйте снова <br> ввести название репозитория</p>'
+				addition.innerHTML = '<p class="no-results">Введите название репозитория</p>'
 			}
 		})
-		.catch(e => {
-			console.log(e);
+		.catch((e) => {
+			console.error(e);
 			return e
 		})
 }
@@ -61,12 +61,11 @@ const debounce = (fn, delay) => {
 	}
 };
 
-const debounceGetRepositoriess = debounce(getRepositoriess, 1000)
+const debounceGetRepositoriess = debounce(getRepositoriess, 500)
 
 searchField.addEventListener('input', () => {
-	if (searchField.value.trim() === '') {
-		const deleteAdditions = document.querySelector('#addition')
-		return deleteAdditions.remove()
+	if (searchField.value.trim() === ' ') {
+		return
 	}
 	debounceGetRepositoriess(searchField.value.trim())
 })
