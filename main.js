@@ -64,8 +64,9 @@ const debounce = (fn, delay) => {
 const debounceGetRepositoriess = debounce(getRepositoriess, 1000)
 
 searchField.addEventListener('input', () => {
-	if (searchField.value === null) {
-		return
+	if (searchField.value.trim() === '') {
+		const deleteAdditions = document.querySelector('#addition')
+		return deleteAdditions.remove()
 	}
 	debounceGetRepositoriess(searchField.value.trim())
 })
